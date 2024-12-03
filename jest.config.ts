@@ -7,6 +7,16 @@ const config: Config = {
     '^.+\\.tsx?$': 'ts-jest',
   },
   testPathIgnorePatterns: ['/node_modules/', '/dist/'],
+  collectCoverage: true,
+  coverageDirectory: 'coverage',
+  coverageProvider: 'v8',
+  coverageReporters: ['text', 'lcov'],
+  moduleFileExtensions: ['js', 'ts', 'json'],
+  globals: {
+    'ts-jest': {
+      tsconfig: 'tsconfig.json',
+    },
+  },
 };
 
 export default config;
