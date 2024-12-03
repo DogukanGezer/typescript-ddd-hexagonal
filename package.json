@@ -7,6 +7,7 @@
     "start": "node dist/cmd/index.js",
     "build": "tsc",
     "test": "jest",
+    "test:cov": "nyc npm run test",
     "dev": "ts-node-dev --respawn --transpile-only src/cmd/index.ts"
   },
   "author": "",
