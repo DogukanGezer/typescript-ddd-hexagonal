@@ -1,13 +1,14 @@
 import User from "../domain/models/user";
 import { IUserUsecase } from "../../core/ports/usecases";
-import { Injectable } from "@nestjs/common";
-import { Repository as UserRepository } from "../repository/index"
+import { Injectable, Inject } from "@nestjs/common";
+import { Repository as UserRepository } from "../repository/mongo/index"
+import { IUserRepository } from "../../core/ports/repository";
 
 @Injectable()
 export default class Usecase implements IUserUsecase {
 
     constructor(
-        private readonly userRepository: UserRepository
+        @Inject("IUserRepository") private readonly userRepository: IUserRepository
     ) { }
 
 

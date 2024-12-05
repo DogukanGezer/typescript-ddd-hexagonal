@@ -3,7 +3,9 @@ import { EnvType, load } from 'ts-dotenv';
 export const schema = {
     HOST: String,
     PORT: Number,
-    MONGO_URI: String
+    MONGO_URI: String,
+    POSTGRE_URI: String,
+    STORAGE: String
 };
 
 export type Env = EnvType<typeof schema>;

@@ -1,5 +1,5 @@
 import Usecase from "./index";
-import { Repository as UserRepository } from "../repository";
+import { Repository as UserRepository } from "../repository/mongo";
 import User from "../domain/models/user";
 import { GetUserInput } from "../repository/types/user";
 
