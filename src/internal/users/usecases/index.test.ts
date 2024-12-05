@@ -1,11 +1,11 @@
 import Usecase from "./index";
-import { Repository as UserRepository } from "../repository/mongo";
+import { IUserRepository } from "../../core/ports/repository";
 import User from "../domain/models/user";
 import { GetUserInput } from "../repository/types/user";
 
 describe("User Usecase", () => {
     let usecase: Usecase;
-    let userRepository: jest.Mocked<UserRepository>;
+    let userRepository: jest.Mocked<IUserRepository>;
 
     beforeEach(() => {
         userRepository = {
@@ -13,7 +13,7 @@ describe("User Usecase", () => {
             searchUser: jest.fn(),
             createUser: jest.fn(),
             updateUser: jest.fn(),
-        } as unknown as jest.Mocked<UserRepository>;
+        } as unknown as jest.Mocked<IUserRepository>;
 
         usecase = new Usecase(userRepository);
     })
